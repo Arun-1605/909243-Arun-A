@@ -1,0 +1,34 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+function add_two_number()
+{
+   $("#display_message").show();
+   if($("#txt1").val()=="" || $("#txt2").val()=="")
+   {
+      $("#display_message").html("<font color='red'>Pls Enter the Values</font>");
+   }
+   else
+  {
+    var answer=parseInt($("#txt1").val()) + parseInt($("#txt2").val())
+       
+    $("#display_message").html("<font color='green'><b>"+answer+"</b></font>");
+ $("#txt3").val(answer);
+ 
+   }
+}
+</script>
+<div id="display_message" style="display:none;">""</div>
+<table class="tbl" border="2px">
+    <tr><td>Enter First Number:</td>
+<td><input type="text" id="txt1" placeholder="Enter First Number"></td>
+    </tr>
+    <tr><td>Enter Second Number</td>
+<td><input type="text" id="txt2" placeholder="Enter Second Number">
+</td> </tr>
+<tr><td>Answer</td><td><input type="text" id="txt3" disabled placeholder="Answer"></td>
+ </tr>
+ <tr><td>Submit</td>  
+<td><input type="button" value="Add" onclick="add_two_number();"></td>
+</tr>
+</table>
+
