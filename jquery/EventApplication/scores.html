@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="score.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+    <script type="text/javascript" src="score.js"></script>
+</head>
+<style>
+    table, td{
+                border: 1px solid black;
+            }
+</style>
+
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>Math1</td>
+            <td ><input class="txt" type="number" ></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Math2</td>
+            <td ><input class="txt" type="number"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Science</td>
+            <td ><input class="txt" type="number"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>English</td>
+            <td ><input class="txt" type="number" ></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Sanskrit</td>
+            <td ><input class="txt" type="number" ></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Social Science</td>
+            <td ><input class="txt" type="number" ></td>
+        </tr>
+        <tr>
+            <td></td> 
+            <td id="re">SUM:</td>
+            <td id="me"><output class="txt" id="sum"></td>
+       </tr>
+    </table>
+    <script>
+        $(document).ready(function(){
+    
+            //iterate through each textboxes and add keyup
+            //handler to trigger sum event
+            $(".txt").each(function() {
+    
+                $(this).keyup(function(){
+                    calculateSum();
+                });
+            });
+    
+        });
+    
+        function calculateSum() {
+    
+            var sum = 0;
+            //iterate through each textboxes and add the values
+            $(".txt").each(function() {
+    
+                //add only if the value is number
+                if(!isNaN(this.value) && this.value.length!=0) {
+                    sum += parseFloat(this.value);
+                }
+    
+            });
+            //.toFixed() method will roundoff the final sum to 2 decimal places
+            $("#sum").html(sum.toFixed(2));
+        }
+    </script>
+</body>
+
+</html>

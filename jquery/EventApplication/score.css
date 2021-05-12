@@ -1,0 +1,20 @@
+
+
+table{
+    font-family: sans-serif;
+    background-color: #E8DCFF;
+    font-weight: bold;
+    text-align: right;
+}
+
+#re{
+    color: #174C68;
+    font-weight: bold;
+    font-size: 18px;
+}
+input[type=number] {
+	background-color: #FEFFB0;
+}
+#me{
+	background-color: #FEFFB0;
+}
