@@ -1,0 +1,90 @@
+<div class="row">  
+    <div class="col-md-4 col-md-offset-4" style="margin-top: 50px; border: 1px solid rgb(100, 98, 98); padding: 30px;">  
+      <form class="form-horizontal" role="form" #f="ngForm" (ngSubmit)="f.form.valid && onFormSubmit()">  
+        <fieldset>  
+          <legend>Address Details:
+            <strong>Template Driven Form</strong>  
+          </legend>  
+    
+          <div class="form-group">  
+            <label class="col-sm-2 control-label" for="textinput">Address</label>  
+            <div class="col-sm-10">  
+          <input type="text" [(ngModel)]="model.address" [ngClass]="{'invalid-data': address.invalid && f.submitted, 'valid-data': address.valid && f.submitted}" required name="address" #address="ngModel" placeholder="Enter Address" class="form-control">    
+<div *ngIf="address.invalid && f.submitted">  
+   <span style="color: red;">Please Enter Address.</span>  
+</div>
+</div >
+          </div>
+    
+          <div class="form-group">  
+            <label class="col-sm-2 control-label" for="textinput">City</label>  
+            <div class="col-sm-10">  
+              <input type="text" name="city" placeholder="Enter City Name" class="form-control" [(ngModel)]="model.city" [ngClass]="{'invalid-data': city.invalid && f.submitted, 'valid-data': city.valid && f.submitted}" required  #city="ngModel" >  
+              <div *ngIf="city.invalid && f.submitted">  
+                <span style="color: red;">Please Enter City.</span>  
+             </div>
+           
+            </div>  
+          </div>  
+    
+          <div class="form-group">  
+            <label class="col-sm-2 control-label" for="textinput">State</label>  
+            <div class="col-sm-4">  
+              <input type="text" name="state" placeholder="State" class="form-control" [(ngModel)]="model.state" [ngClass]="{'invalid-data': state.invalid && f.submitted, 'valid-data': state.valid && f.submitted}" required  #state="ngModel" >  
+              <div *ngIf="state.invalid && f.submitted">  
+                <span style="color: red;">Please Enter State.</span>  
+             </div>
+           
+            </div>  
+    
+            <label class="col-sm-2 control-label" for="textinput">Postcode</label>  
+            <div class="col-sm-4">  
+              <input type="text" name="postcode" placeholder="Enter Post Code" class="form-control" [(ngModel)]="model.postcode" [ngClass]="{'invalid-data': postcode.invalid && f.submitted, 'valid-data': postcode.valid && f.submitted}" required  #postcode="ngModel" >  
+          
+              <div *ngIf="postcode.invalid && f.submitted">  
+                <span style="color: red;">Please Enter Postcode.</span>  
+             </div> </div>  
+          </div>  
+          <div class="form-group">  
+            <label class="col-sm-2 control-label" for="textinput">Country</label>  
+           
+          <div class="col-sm-10">  
+            <select class="form-control" name="country" [(ngModel)]="model.country" #country="ngModel" [ngClass]="{'invalid-data': country.invalid && f.submitted, 'valid-data': country.valid && f.submitted}" required>  
+              <option [ngValue]="null">---Select---</option>  
+              <option *ngFor="let item of countryData" [value]="item">  
+                {{item}}  
+              </option>  
+            </select>    
+            <div *ngIf="country.invalid && f.submitted">  
+              <span style="color: red;">Please Select Country.</span>  
+            </div>  
+          </div>  
+          </div>
+    
+          <div class="form-group">  
+            <div class="col-sm-2 form-check"> <input type="checkbox" [(ngModel)]="model.aggrement" [ngClass]="{'invalid-data': aggrement.invalid && f.submitted, 'valid-data': aggrement.valid && f.submitted}" required name="aggrement" #aggrement="ngModel" class="form-check-input">  
+           </div>  
+           <label class="col-sm-10 form-check-label">I aggree to Terms & Conditions  
+           </label>  
+         </div>  
+          
+    
+          <div class="form-group">  
+            <div class="col-sm-12">  
+              <span style="color: red;">Please Aggree with Terms & Conditions.</span>  
+            </div>  
+          </div>  
+    
+          <div class="form-group">  
+            <div class="col-sm-offset-2 col-sm-10">  
+              <div class="pull-right">  
+                <button type="submit" class="btn btn-primary" style="margin: 4px;">Save</button>  
+                <button type="reset" class="btn btn-default">Reset</button>  
+              </div>  
+            </div>  
+          </div>  
+        </fieldset>  
+      </form>  
+    </div>  
+  </div>
+  
