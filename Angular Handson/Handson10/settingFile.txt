@@ -1,0 +1,21 @@
+/****
+@Author-Sumriddhi
+
+****/
+
+install 1,2,3 in your angular folder firstly
+
+1)npm install -g json-server
+2)npm i json-server --save
+3)npm install angular-in-memory-web-api –-save
+
+check ur given test database using this url on web browser-
+json-server --watch server/db.json
+
+after running the program using ng serve
+for output either u can check on default 4200 
+or run first
+json-server --watch server/db.json
+then we can check on http://localhost:3000/employees (browser or postman)
+
+(DON'T CLOSE ANY OF THE RUNNING PORT IN THE CONSOLE WHILE CHECKING OUTPUT)
