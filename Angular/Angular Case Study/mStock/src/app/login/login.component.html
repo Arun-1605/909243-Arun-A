@@ -1,0 +1,34 @@
+<div class="container login" style="align-items: center;">
+  <h3><strong>Let's get started by login</strong></h3>
+
+
+<form [formGroup]="signinForm" novalidate (ngSubmit)="Login();" >
+
+<span style="color: red;">Fields marked with * are mandatory</span>
+
+
+  <div class="form-group col-md-4 mb-3">
+      <label for="email">Email</label><span style="color: red;">*</span>
+    
+    <input type="text" class="form-control" id="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+   
+    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is required</div>
+        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+    </div>
+  </div>
+      
+   
+    <div class="form-group col-md-4 mb-3">
+      <label for="password">Password</label><span style="color: red;">*</span>
+     <input type="password" class="form-control" id="password" formControlName="password" name="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+      <div *ngIf="f.password.errors.required" else wrong>Password is required</div>
+      <div *ngIf="f.password.errors.minlength">Password must be at least 4 characters</div>
+  </div>
+    </div>
+ 
+
+  <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+</div>

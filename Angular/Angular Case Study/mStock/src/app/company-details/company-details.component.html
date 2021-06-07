@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <br/>
+    <h1><strong>Companies List</strong></h1> 
+        <br/> <br/>
+    <div class="row">
+        <div *ngFor="let c of com" class="col-sm-4 mb-3">
+            <div class="card" style="width: 25rem; padding: 1px;">
+                <div class="card-header"><h6><strong>{{c.CompanyName}}</strong></h6></div>
+                <div class="card-body">
+                    <p class="card-text">{{c.BriefDesc}}</p>
+                </div>
+                <div class="card-footer">
+                    <h6><strong>Today's Price : ${{c.CurrentStockPrice}}</strong>
+                        <a [routerLink]="['Watch-list']" class="btn btn-primary" *ngIf= "ShowWatchButton"(click)="AddToWatchHandler('{{c.CompanyCode}}')">Watch</a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
