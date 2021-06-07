@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="col-md-12">
+        
+        <table class="table table-striped">
+          <thead><h2>Companies List</h2></thead>
+            <tbody>
+            
+       <td *ngFor="let company of CompanyDetails">
+        
+        
+            <tr><td><strong>{{company.companyname}}</strong><br></td></tr>
+                
+            
+          
+            <tr>    <td><br>{{company.briefdesc}}</td></tr>
+          
+            <tr>   <td><br><strong>Today's Price: ${{company.stockprice}}</strong><button class="btn btn-primary" (click)="addToCart(company,$event)" *ngIf="flag1=='true'">Watch</button></td></tr> 
+            
+        
+    </td>    
+    
+    </tbody>  
+        </table>
+      </div>
+    </div>

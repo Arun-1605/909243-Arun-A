@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ECart_BLL.ProductDto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Products</h2>
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+    <div class="col-md-4">
+        <div class="card border" style="width: 18rem;">
+            <img class="card-img-top" src="@item.ImageURL" width="286px" height="180px" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Price.ToString("N2") INR</p>
+                @Html.ActionLink("Add To Cart", "Add", "Cart", new { productId = item.Id }, new { @class = "btn btn-warning" })
+            </div>
+        </div>
+    </div>
+            }
+      
+    </div>
+
